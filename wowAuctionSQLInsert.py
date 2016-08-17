@@ -15,14 +15,13 @@ config = {
 	'raise_on_warnings': True
 }
 
-#Request api key
-response = requests.get("https://eu.api.battle.net/wow/auction/data/frostmane?locale=en_GB&apikey=vmgmryqdpgtwggu5r3v7y9xu7dvmzszk")
-
 
 
 #While true loop
 while True:
 
+	#Request api key
+	response = requests.get("https://eu.api.battle.net/wow/auction/data/frostmane?locale=en_GB&apikey=vmgmryqdpgtwggu5r3v7y9xu7dvmzszk")
 	#Json the response
 	data = response.json()
 	#Auction data url
@@ -67,9 +66,9 @@ while True:
 		for x in range(0, auctionsLen):
 		#for loop start
 			#Data to be inserted
-			data_auction = (auctions[x]["auc"], auctions[x]["item"], auctions[x]["owner"], 
-											auctions[x]["bid"], auctions[x]["buyout"], auctions[x]["quantity"], 
-											auctions[x]["timeLeft"], timeStamp)
+			data_auction = (auctions[x]["auc"], auctions[x]["item"],
+			auctions[x]["owner"], auctions[x]["bid"], auctions[x]["buyout"], 
+			auctions[x]["quantity"], auctions[x]["timeLeft"], timeStamp)
 			#Execute query
 			cursor.execute(add_auction, data_auction)
 		#for loop end
@@ -90,6 +89,16 @@ while True:
 		print("Woke up")
 	#IF END
 #While true end
+
+
+
+
+
+
+
+
+
+
 
 
 
