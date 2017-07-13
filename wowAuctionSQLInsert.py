@@ -8,7 +8,7 @@ from mysql.connector import errorcode
 #Login info for mysql server - local network
 config = {
 	'user': 'pythonWOW',
-	'password': 'chrant01',
+	'password': 'pw',
 	'host': '192.168.10.50',
 	'port': '3306',
 	'database': 'wowauctions',
