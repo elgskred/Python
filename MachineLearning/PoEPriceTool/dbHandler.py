@@ -252,6 +252,7 @@ while True:
     replaceQuery = []
     insertQuery = []
     deleteQuery = []
+    
     for doc in documents:
         if queryID != doc['stashID']:
             if queryID != "":
