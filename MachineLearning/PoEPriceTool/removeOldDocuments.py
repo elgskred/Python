@@ -2,8 +2,8 @@ from datetime import datetime, timedelta
 from pymongo import MongoClient
 
 def removeOld():
-    #client = MongoClient("mongodb://poeUser:12345678@192.168.10.50/poe")
-    client = MongoClient("mongodb://poeUser:12345678@localhost/poe")
+    client = MongoClient("mongodb://poeUser:12345678@192.168.10.50/poe")
+    #client = MongoClient("mongodb://poeUser:12345678@localhost/poe")
     db = client['poe']
     
     #Remove documents that are 3 days or older

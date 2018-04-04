@@ -1,18 +1,19 @@
 to maximum Mana
 increased Physical Damage
 to Accuracy Rating
-increased Physical Damage
 to Physical Damage
 to Fire Damage
 to Cold Damage
 to Lightning Damage
 increased Spell Damage
+increased Fire Damage
+increased Cold Damage
+increased Lightning Damage
 increased Elemental Damage with Attack Skills
 to Level of Socketed Gems
 to Level of Socketed Fire Gems
 to Level of Socketed Cold Gems
 to Level of Socketed Lightning Gems
-to Level of Socketed Chaos Gems
 to Level of Socketed Melee Gems
 of Physical Attack Damage Leeched as Life
 of Physical Attack Damage Leeched as Mana
@@ -28,13 +29,15 @@ chance to Shock
 chance to Ignite
 chance to Freeze
 additional Block Chance while Dual Wielding
-chance to cause Bleeding on Hit
+Socketed Gems are Supported by Level . Blood Magic
 reduced Enemy Block Chance
 increased Damage over Time
-to Dexterity
+to Strength
 to Intelligence
+increased Cast Speed
 increased Attack Speed
 increased Mana Regeneration Rate
+reduced Enemy Stun Threshold
 to Fire Resistance
 to Cold Resistance
 to Lightning Resistance
@@ -42,58 +45,58 @@ to Chaos Resistance
 increased Stun Duration on Enemies
 increased Critical Strike Chance for Spells
 Life gained for each Enemy hit by Attacks
+increased Fire Damage
+increased Cold Damage
+increased Lightning Damage
 Life gained on Kill
 Mana gained on Kill
 increased Critical Strike Chance
 to Global Critical Strike Multiplier
 reduced Attribute Requirements
 increased Light Radius
-increased Poison Duration
-chance to Poison on Hit
-increased Damage with Poison
+chance to Ignite
+chance to Freeze
+chance to Shock
+increased Burning Damage
 Life gained for each Enemy hit by your Attacks
 reduced Enemy Stun Threshold with this Weapon
 to Weapon range
 Socketed Gems are Supported by Level .. Added Fire Damage
 Socketed Gems are supported by Level .. Elemental Damage with Attacks
-of Physical Damage as Extra Cold Damage
+of Physical Damage as Extra Fire Damage
 of Physical Damage as Extra Lightning Damage
-Cold Damage to Attacks with this Weapon per 10 Dexterity
+Fire Damage to Attacks with this Weapon per 10 Strength
 Lightning Damage to Attacks with this Weapon per 10 Intelligence
 Socketed Gems are Supported by Level .. Controlled Destruction
-increased Cold Damage
-Socketed Gems are Supported by Level .. Cold Penetration
-increased Lightning Damage
+increased Elemental Damage
+Socketed Gems are Supported by Level .. Elemental Focus
 Socketed Gems are Supported by Level .. Lightning Penetration
 of Elemental Damage as Extra Chaos Damage
-Socketed Gems are supported by Level .. Melee Splash
-increased Area Damage
+Socketed Gems are supported by Level 20 Melee Splash
+(33–37)% increased Area Damage
 Socketed Gems are Supported by Level .. Faster Attacks
 Socketed Gems are Supported by Level .. Increased Critical Strikes
-chance to Maim on Hit
-Socketed Gems are Supported by Level .. Maim
 Damage Penetrates
-increased Cast Speed
 Socketed Gems are Supported by Level .. Faster Casting
 Socketed Gems are Supported by Level .. Increased Critical Strikes
-Socketed Gems are Supported by Level .. Lesser Poison
+chance to Freeze, Shock and Ignite
+Socketed Gems are Supported by Level .. Elemental Proliferation	Sceptres
 increased Area of Effect
 Socketed Gems are Supported by Level .. Spell Cascade
-to Critical Strike Multiplier against Enemies that are on Full Life
+of Physical Damage as Extra Damage of a random Element	Sceptres
 Socketed Gems are Supported by Level .. Melee Physical Damage
 Socketed Gems are Supported by Level .. Brutality
 Socketed Gems are Supported by Level .. Ruthless
 Socketed Gems are Supported by Level .. Efficacy
+Socketed Gems are Supported by Level .. Fire Penetration
 Physical Damage to Spells
 Chaos Damage to Spells
-increased Spell Damage per 16 Dexterity
-increased Spell Damage per 16 Intelligence
+1% increased Spell Damage per 16 Strength
+1% increased Spell Damage per 16 Intelligence
 Socketed Gems are Supported by Level .. Ancestral Call
-Socketed Gems are supported by Level .. Multistrike
-Socketed Gems are supported by Level .. Increased Critical Damage
-Socketed Gems are Supported by Level .. Chance To Bleed
+Socketed Gems are supported by Level .. Multistrike	Sceptres
+Socketed Gems are supported by Level 20 Increased Critical Damage
 of Physical Damage Converted to Chaos Damage
 Socketed Gems are Supported by Level .. Spell Echo
-Socketed Gems are Supported by Level .. Poison
+Socketed Gems are Supported by Level .. Unbound Ailments
 Socketed Gems are Supported by Level .. Increased Area of Effect
-increased Critical Strike Chance against Poisoned Enemies

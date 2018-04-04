@@ -9,12 +9,12 @@ to Level of Socketed Gems
 to Level of Socketed Melee Gems
 of Physical Attack Damage Leeched as Life
 of Physical Attack Damage Leeched as Mana
-to Chaos Damage
+to Chaos Damage, Adds # to Chaos Damage
 additional Block Chance while Dual Wielding
-chance to cause Bleeding on Hit
+Socketed Gems are Supported by Level . Blood Magic
 reduced Enemy Block Chance
 increased Damage over Time
-to Dexterity
+to Strength
 increased Attack Speed
 reduced Enemy Stun Threshold
 to Fire Resistance
@@ -30,45 +30,38 @@ to Global Critical Strike Multiplier
 to Accuracy Rating
 reduced Attribute Requirements
 increased Light Radius
-increased Poison Duration
 increased Bleeding Duration
 chance to cause Bleeding on Hit
-chance to Poison on Hit
-increased Damage with Poison
 increased Damage with Bleeding
+to Dexterity
+to Accuracy Rating
 Life gained for each Enemy hit by your Attacks
 reduced Enemy Stun Threshold with this Weapon
 to Weapon range
 Socketed Gems are Supported by Level .. Added Fire Damage
 Socketed Gems are supported by Level .. Elemental Damage with Attacks
 of Physical Damage as Extra Fire Damage
-of Physical Damage as Extra Cold Damage
 Fire Damage to Attacks with this Weapon per 10 Strength
-Cold Damage to Attacks with this Weapon per 10 Dexterity
 Socketed Gems are supported by Level .. Melee Splash
 increased Area Damage
 Socketed Gems are Supported by Level .. Faster Attacks
 Socketed Gems are Supported by Level .. Increased Critical Strikes
-chance to Maim on Hit
-Socketed Gems are Supported by Level 20 Maim
-chance to gain Onslaught for 4 seconds on Kill
+Socketed Gems are Supported by Level .. Maim
 additional Block Chance while Dual Wielding
 Damage Penetrates
-increased Accuracy Rating per Frenzy Charge
-chance to gain a Frenzy Charge when you Block
-Socketed Movement Skills have no Mana Cost
+Enemies killed explode dealing 5% of their Life as Fire Damage
+chance to gain Fortify when you Stun an Enemy with Melee Damage
 Socketed Gems are Supported by Level .. Melee Physical Damage
 Socketed Gems are Supported by Level .. Brutality
 Socketed Gems are Supported by Level .. Ruthless
 Socketed Gems are Supported by Level .. Ancestral Call
 increased Area of Effect
-Socketed Gems are supported by Level .. Multistrike
+Socketed Gems are supported by Level .. Multistrike	One Hand Maces
 Socketed Gems are supported by Level .. Increased Critical Damage
+chance to Poison on Hit
 Socketed Gems are Supported by Level .. Poison
 Socketed Gems are Supported by Level .. Chance To Bleed
-chance to Blind Enemies on Hit with Attacks
 increased Physical Weapon Damage while Dual Wielding
-Physical Damage Converted to Chaos Damage
-additional Block Chance per Endurance Charge
-chance to gain an Endurance Charge when you Block
-Gain an Endurance Charge every 4 seconds while Stationary
+of Physical Damage Converted to Chaos Damage
+3% increased Area of Effect per 50 Strength	One Hand Maces
+increased Area of Effect if you have Stunned an Enemy Recently

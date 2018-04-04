@@ -11,9 +11,9 @@ of Physical Attack Damage Leeched as Life
 of Physical Attack Damage Leeched as Mana
 to Chaos Damage
 additional Block Chance while Dual Wielding
-chance to cause Bleeding on Hit
 reduced Enemy Block Chance
 increased Damage over Time
+to Strength
 to Dexterity
 increased Attack Speed
 reduced Enemy Stun Threshold
@@ -27,15 +27,12 @@ Life gained on Kill
 Mana gained on Kill
 increased Critical Strike Chance
 to Global Critical Strike Multiplier
-to Accuracy Rating
 reduced Attribute Requirements
 increased Light Radius
-increased Poison Duration
 increased Bleeding Duration
 chance to cause Bleeding on Hit
-chance to Poison on Hit
-increased Damage with Poison
 increased Damage with Bleeding
+to Accuracy Rating
 Life gained for each Enemy hit by your Attacks
 reduced Enemy Stun Threshold with this Weapon
 to Weapon range
@@ -50,25 +47,25 @@ increased Area Damage
 Socketed Gems are Supported by Level .. Faster Attacks
 Socketed Gems are Supported by Level .. Increased Critical Strikes
 chance to Maim on Hit
-Socketed Gems are Supported by Level 20 Maim
+Socketed Gems are Supported by Level .. Maim
 chance to gain Onslaught for 4 seconds on Kill
 additional Block Chance while Dual Wielding
 Damage Penetrates
-increased Accuracy Rating per Frenzy Charge
-chance to gain a Frenzy Charge when you Block
-Socketed Movement Skills have no Mana Cost
+chance to gain an Endurance Charge on Critical Strike
+increased Critical Strike Chance if you have Killed Recently
 Socketed Gems are Supported by Level .. Melee Physical Damage
 Socketed Gems are Supported by Level .. Brutality
 Socketed Gems are Supported by Level .. Ruthless
 Socketed Gems are Supported by Level .. Ancestral Call
 increased Area of Effect
-Socketed Gems are supported by Level .. Multistrike
+Socketed Gems are supported by Level .. Multistrike	One Hand Axes
 Socketed Gems are supported by Level .. Increased Critical Damage
+chance to Poison on Hit
 Socketed Gems are Supported by Level .. Poison
-Socketed Gems are Supported by Level .. Chance To Bleed
+Socketed Gems are Supported by Level 20 Chance To Bleed
 chance to Blind Enemies on Hit with Attacks
-increased Physical Weapon Damage while Dual Wielding
-Physical Damage Converted to Chaos Damage
-additional Block Chance per Endurance Charge
-chance to gain an Endurance Charge when you Block
-Gain an Endurance Charge every 4 seconds while Stationary
+% increased Physical Weapon Damage while Dual Wielding
+of Physical Damage Converted to Chaos Damage
+Hits with this Weapon have Culling Strike against Bleeding Enemies
+increased Physical Damage
+chance to gain an Endurance Charge when you Hit a Bleeding Enemy

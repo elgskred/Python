@@ -1,25 +1,16 @@
 to maximum Mana
 increased Physical Damage
 to Accuracy Rating
-increased Physical Damage
-to Physical Damage
+Physical Damage
 to Fire Damage
 to Cold Damage
 to Lightning Damage
-increased Spell Damage
-increased Elemental Damage with Attack Skills
+increased Elemental Damage with Attack Skills'
 to Level of Socketed Gems
-to Level of Socketed Fire Gems
-to Level of Socketed Cold Gems
-to Level of Socketed Lightning Gems
-to Level of Socketed Chaos Gems
 to Level of Socketed Melee Gems
 of Physical Attack Damage Leeched as Life
 of Physical Attack Damage Leeched as Mana
-to Fire Damage to Spells
-to Cold Damage to Spells
-to Lightning Damage to Spells
-to Chaos Damage
+Chaos Damage
 of Fire Damage Leeched as Life
 of Cold Damage Leeched as Life
 of Lightning Damage Leeched as Life
@@ -27,12 +18,10 @@ increased Curse Duration
 chance to Shock
 chance to Ignite
 chance to Freeze
-additional Block Chance while Dual Wielding
 chance to cause Bleeding on Hit
 reduced Enemy Block Chance
 increased Damage over Time
 to Dexterity
-to Intelligence
 increased Attack Speed
 increased Mana Regeneration Rate
 to Fire Resistance
@@ -40,7 +29,6 @@ to Cold Resistance
 to Lightning Resistance
 to Chaos Resistance
 increased Stun Duration on Enemies
-increased Critical Strike Chance for Spells
 Life gained for each Enemy hit by Attacks
 Life gained on Kill
 Mana gained on Kill
@@ -56,44 +44,32 @@ reduced Enemy Stun Threshold with this Weapon
 to Weapon range
 Socketed Gems are Supported by Level .. Added Fire Damage
 Socketed Gems are supported by Level .. Elemental Damage with Attacks
-of Physical Damage as Extra Cold Damage
-of Physical Damage as Extra Lightning Damage
+of Physical Damage as Extra Cold Damag
+of Physical Damage as Extra Lightning Damage',
 Cold Damage to Attacks with this Weapon per 10 Dexterity
 Lightning Damage to Attacks with this Weapon per 10 Intelligence
-Socketed Gems are Supported by Level .. Controlled Destruction
-increased Cold Damage
-Socketed Gems are Supported by Level .. Cold Penetration
-increased Lightning Damage
-Socketed Gems are Supported by Level .. Lightning Penetration
-of Elemental Damage as Extra Chaos Damage
 Socketed Gems are supported by Level .. Melee Splash
 increased Area Damage
 Socketed Gems are Supported by Level .. Faster Attacks
 Socketed Gems are Supported by Level .. Increased Critical Strikes
 chance to Maim on Hit
 Socketed Gems are Supported by Level .. Maim
-Damage Penetrates
-increased Cast Speed
-Socketed Gems are Supported by Level .. Faster Casting
-Socketed Gems are Supported by Level .. Increased Critical Strikes
-Socketed Gems are Supported by Level .. Lesser Poison
-increased Area of Effect
-Socketed Gems are Supported by Level .. Spell Cascade
-to Critical Strike Multiplier against Enemies that are on Full Life
+chance to gain Onslaught for 4 seconds on Kill
+additional Block Chance while Dual Wielding
+Damage Penetrates .% Elemental Resistances
+Enemies have 20% reduced Evasion if you have Hit them Recently
+increased Critical Strike Chance against Blinded Enemies
 Socketed Gems are Supported by Level .. Melee Physical Damage
 Socketed Gems are Supported by Level .. Brutality
 Socketed Gems are Supported by Level .. Ruthless
-Socketed Gems are Supported by Level .. Efficacy
-Physical Damage to Spells
-Chaos Damage to Spells
-increased Spell Damage per 16 Dexterity
-increased Spell Damage per 16 Intelligence
 Socketed Gems are Supported by Level .. Ancestral Call
 Socketed Gems are supported by Level .. Multistrike
 Socketed Gems are supported by Level .. Increased Critical Damage
-Socketed Gems are Supported by Level .. Chance To Bleed
-of Physical Damage Converted to Chaos Damage
-Socketed Gems are Supported by Level .. Spell Echo
 Socketed Gems are Supported by Level .. Poison
-Socketed Gems are Supported by Level .. Increased Area of Effect
-increased Critical Strike Chance against Poisoned Enemies
+Socketed Gems are Supported by Level .. Chance To Bleed
+chance to gain Unholy Might for 3 seconds on Kill
+chance to Blind Enemies on Hit with Attacks
+increased Physical Weapon Damage while Dual Wielding
+of Physical Damage Converted to Chaos Damage
+chance to gain one of its mods for 10 seconds
+Life gained for each Blinded Enemy Hit by this Weapon

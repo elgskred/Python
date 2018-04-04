@@ -28,12 +28,14 @@ def preprocessing(stash):
                     if item['frameType'] == 2:
                         if (next(iter(item['category'])) != 'maps') and (next(iter(item['category'])) != 'monsters'):
                             if next(iter(item['category'])) == 'jewels':
-                                document['armorSlot'] = item['typeLine']
+                                document['armorSlot'] = 'jewel'
+                            elif next(iter(item['category'])) == 'weapons':
+                                document['armorSlot'] = item['properties'][0]['name']
                             else:
                                 document['armorSlot'] = next(iter(item['category'].values()))[0]
                             if ('elder' in item):
                                 document['elder'] = 1
-                            if('shaper' in item):
+                            elif('shaper' in item):
                                 document['shaper'] = 1
                             else:
                                 document['elder'] = 0
@@ -84,6 +86,8 @@ def preprocessing(stash):
                             document['lastCharName'] = tab['lastCharacterName']
                             document['x'] = item['x']
                             document['y'] = item['y']
+                            if 'typeLine' in item:
+                                document['typeLine'] = item['typeLine']
                             document['timeStamp'] = datetime(year, month, day)
                             documents.append(document)
                             document = {}
@@ -103,12 +107,14 @@ def preprocessing(stash):
                         if item['note'].find('~') >= 0:
                             if (next(iter(item['category'])) != 'maps') and (next(iter(item['category'])) != 'monsters'):
                                 if next(iter(item['category'])) == 'jewels':
-                                    document['armorSlot'] = item['typeLine']
+                                    document['armorSlot'] = 'jewel'
+                                elif next(iter(item['category'])) == 'weapons':
+                                    document['armorSlot'] = item['properties'][0]['name']
                                 else:
                                     document['armorSlot'] = next(iter(item['category'].values()))[0]
                                 if ('elder' in item):
                                     document['elder'] = 1
-                                if('shaper' in item):
+                                elif('shaper' in item):
                                     document['shaper'] = 1
                                 else:
                                     document['elder'] = 0
@@ -160,6 +166,8 @@ def preprocessing(stash):
                                 document['lastCharName'] = tab['lastCharacterName']
                                 document['x'] = item['x']
                                 document['y'] = item['y']
+                                if 'typeLine' in item:
+                                    document['typeLine'] = item['typeLine']
                                 document['timeStamp'] = datetime(year, month, day)
                                 documents.append(document)
                                 document = {}
@@ -169,8 +177,8 @@ def preprocessing(stash):
 
 
 def dbhandling(documents):
-    #client = MongoClient("mongodb://poeUser:12345678@192.168.10.50/poe")
-    client = MongoClient("mongodb://poeUser:12345678@localhost/poe")
+    client = MongoClient("mongodb://poeUser:12345678@192.168.10.50/poe")
+    #client = MongoClient("mongodb://poeUser:12345678@localhost/poe")
     db = client['poe']
     queryID = ""
     queryDocuments = []
