@@ -47,3 +47,5 @@ Temporary Items
 .apdisk
 ./MachineLearning/PoEPriceTool/models
 ./MachineLearning/PoEPriceTool/__pycache__
+/MachineLearning/PoEPriceTool/models
+/MachineLearning/PoEPriceTool/__pycache__
