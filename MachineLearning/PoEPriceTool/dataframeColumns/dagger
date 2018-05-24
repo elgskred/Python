@@ -1,7 +1,6 @@
 to maximum Mana
 increased Physical Damage
 to Accuracy Rating
-increased Physical Damage
 to Physical Damage
 to Fire Damage
 to Cold Damage
@@ -16,9 +15,9 @@ to Level of Socketed Chaos Gems
 to Level of Socketed Melee Gems
 of Physical Attack Damage Leeched as Life
 of Physical Attack Damage Leeched as Mana
-to Fire Damage to Spells
-to Cold Damage to Spells
-to Lightning Damage to Spells
+Fire Damage to Spells
+Cold Damage to Spells
+Lightning Damage to Spells
 to Chaos Damage
 of Fire Damage Leeched as Life
 of Cold Damage Leeched as Life
@@ -97,3 +96,7 @@ Socketed Gems are Supported by Level .. Spell Echo
 Socketed Gems are Supported by Level .. Poison
 Socketed Gems are Supported by Level .. Increased Area of Effect
 increased Critical Strike Chance against Poisoned Enemies
+Can have multiple Crafted Mods
+ilvl
+elder
+shaper

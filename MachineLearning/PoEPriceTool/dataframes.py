@@ -1,101 +1,129 @@
 import pandas as pd
-import re
-
-
-
-regex = "Gain ..% of Physical Damage as Extra Fire Damage"
-l = ['Socketed Gems are Supported by Level 22 Added Fire Damage','Socketed Gems are Supported by Level 16 Added Fire Damage','235 to Accuracy Rating']
-l2 = ["+28 to Strength", "Gain 33% of Physical Damage as Extra Fire Damage", "Gain 18% of Physical Damage as Extra Cold Damage","+275 to Accuracy Rating",'Socketed Gems are Supported by Level 16 Added Fire Damage',"5% chance to gain Onslaught for 4 seconds on Kill",'Socketed Gems are Supported by Level 18 Faster Attacks']
-matches = [string for string in l2 if re.match(regex, string)]
-col = dagger.columns
-for c in range(0, len(col)):
-    for i in range(0, len(l2)):
-        matches = [string for string in l2 if re.match(col[c], string)]
-        itemString = l2[i]
-        columnString = col[c]
-        if itemString.split(columnString, 1)[-1] != itemString:
-            print(itemString.split(columnString, 1)[-1])
-            print(columnString)
 
 def dagger():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/dagger')]
+    lines = list(set(lines))
     dagger = pd.DataFrame(columns=lines)
     return dagger
 
 def claw():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/claw')]
+    lines = list(set(lines))
     claw = pd.DataFrame(columns=lines)
     return claw
 
-def ring():
-    ring = pd.DataFrame(columns=['maximum Life', 'maximum Mana', 'maximum Energy Shield',
-                               'Physical Damage to Attacks', 'Fire Damage to Attacks',
-                               'Cold Damage to Attacks', 'Lightning Damage to Attacks',
-                               'Physical Attack Damage Leeched as Life', 'Evasion Rating',
-                               'increased Elemental Damage with Attack Skills', 'Physical Attack Damage Leeched as Mana',
-                               'increased Rarity of Items found', 'increased Evasion Rating',
-                               'increased Armour', 'Chaos Damage to Attacks', 'Energy Shield Recharge',
-                               'Strength', 'Dexterity', 'Intelligence', 'all Attributes',
-                               'increased Cast Speed', 'increased Attack Speed', 'Accuracy Rating',
-                               'Life Regenerated per second', 'increased Mana Regeneration Rate',
-                               'Fire Resistance', 'Cold Resistance', 'Lightning Resistance',
-                               'Chaos Resistance', 'Elemental Resistances', 'Life gained for each Enemy hit by your Attacks',
-                               'increased Fire Damage', 'increased Cold Damage', 'increased Lightning Damage',
-                               'increased Global Critical Strike Chance', 'crafted',
-                               'reduced Reflected Elemental Damage taken', 'Cold Damage to Spells and Attacks',
-                               'Lightning Damage to Spells and Attacks', 'increased Experience gain', 'Life gained for each Enemy hit by your Spells',
-                               'Mana gained for each Enemy Hit by your Spells', 'Cold Damage against Chilled or Frozen Enemies',
-                               'Lightning Damage against Shocked Enemies', 'reduced Effect of Curses on You', 'increased Spell Damage',
-                               "Assassin's Mark on Hit", 'Herald of Ice Skill', 'Herald of Thunder Skill',
-                               'Reflected Physical Damage taken', 'Fire Damage to Spells and Attacks',
-                               'Mana gained for each Enemy hit by your Attacks', 'Fire Damage against Ignited Enemies', 'increased Melee Damage	',
-                               'increased Projectile Attack Damage', 'Global Critical Strike Multiplier', 'increased Accuracy Rating',
-                               "Poacher's Mark on Hit", "Warlord's Mark on Hit", 'Herald of Ash Skill', 'chance to Evade Attacks',
-                               'elder', 'shaper', 'ilvl','stashID','itemID','price'])
-    return ringDF
 
 def wand():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/wand')]
+    lines = list(set(lines))
     wand = pd.DataFrame(columns=lines)
     return wand
 
 def one_handed_sword():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/oneSword')]
+    lines = list(set(lines))
     one_handed_sword = pd.DataFrame(columns=lines)
     return one_handed_sword
 
 def one_handed_axe():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/oneAxe')]
+    lines = list(set(lines))
     one_handed_axe = pd.DataFrame(columns=lines)
     return one_handed_axe
 
 def one_handed_mace():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/oneMace')]
+    lines = list(set(lines))
     one_handed_mace = pd.DataFrame(columns=lines)
     return one_handed_mace
 
 def scepter():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/scepter')]
+    lines = list(set(lines))
     scepter = pd.DataFrame(columns=lines)
     return scepter
 
 def bow():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/bow')]
+    lines = list(set(lines))
     bow = pd.DataFrame(columns=lines)
     return bow
 
 def staff():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/bow')]
+    lines = list(set(lines))
     staff = pd.DataFrame(columns=lines)
     return staff
 
 def two_handed_sword():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/twoSword')]
+    lines = list(set(lines))
     two_handed_sword = pd.DataFrame(columns=lines)
     return two_handed_sword
 
 def two_handed_axe():
     lines = [line.rstrip('\n') for line in open('./dataframeColumns/twoAxe')]
+    lines = list(set(lines))
     two_handed_axe = pd.DataFrame(columns=lines)
     return two_handed_axe
+
+def two_handed_mace():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/twoMace')]
+    lines = list(set(lines))
+    two_handed_mace = pd.DataFrame(columns=lines)
+    return two_handed_mace
+
+def gloves():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/gloves')]
+    lines = list(set(lines))
+    gloves = pd.DataFrame(columns=lines)
+    return gloves
+
+def boots():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/boots')]
+    lines = list(set(lines))
+    boots = pd.DataFrame(columns=lines)
+    return boots
+
+def chest():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/bodyArmour')]
+    lines = list(set(lines))
+    chest = pd.DataFrame(columns=lines)
+    return chest
+
+def helmet():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/helmet')]
+    lines = list(set(lines))
+    helmet = pd.DataFrame(columns=lines)
+    return helmet
+
+def shield():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/shield')]
+    lines = list(set(lines))
+    shield = pd.DataFrame(columns=lines)
+    return shield
+
+def amulet():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/amulet')]
+    lines = list(set(lines))
+    amulet = pd.DataFrame(columns=lines)
+    return amulet
+
+def ring():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/ring')]
+    lines = list(set(lines))
+    ring = pd.DataFrame(columns=lines)
+    return ring
+
+def belt():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/belt')]
+    lines = list(set(lines))
+    belt = pd.DataFrame(columns=lines)
+    return belt
+
+def quiver():
+    lines = [line.rstrip('\n') for line in open('./dataframeColumns/quiver')]
+    lines = list(set(lines))
+    quiver = pd.DataFrame(columns=lines)
+    return quiver
 

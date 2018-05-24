@@ -51,8 +51,8 @@ increased Critical Strike Chance if you have Killed Recently
 chance to gain Onslaught for 4 seconds on Kill
 Damage Penetrates
 increased Movement Speed
-+1 to Maximum Endurance Charges
-+1 to Maximum Frenzy Charges
+to Maximum Endurance Charges
+to Maximum Frenzy Charges
 Socketed Movement Skills have no Mana Cost
 chance to Fortify on Hit
 chance to gain an Endurance Charge on Kill
@@ -67,3 +67,7 @@ Culling Strike
 increased Area of Effect
 Gain an Endurance Charge every 4 seconds while Stationary
 to Melee Weapon Range if you have Killed Recently
+Can have multiple Crafted Mods
+ilvl
+elder
+shaper

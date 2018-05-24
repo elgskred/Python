@@ -304,7 +304,6 @@ while True:
             #Loop through all stash pages returned by the api request    
             documents = preprocessing(stash)
             dbhandling(documents)
-            removeOld()
             print('done preprocessing and handling db functions')
     
 

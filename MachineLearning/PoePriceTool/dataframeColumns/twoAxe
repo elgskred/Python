@@ -46,15 +46,14 @@ increased Critical Strike Chance if you have Killed Recently
 chance to gain Onslaught for 4 seconds on Kill
 Damage Penetrates
 increased Movement Speed
-+1 to Maximum Endurance Charges
-+1 to Maximum Frenzy Charges
+to Maximum Endurance Charges
+to Maximum Frenzy Charges
 chance to gain an Endurance Charge on Critical Strike
 chance to gain an Endurance Charge when you Taunt an Enemy
 chance to gain an Endurance Charge on Kill
-Socketed Gems are Supported by Level 20 Onslaught
-68	(101–115)% increased Physical Damage
-Socketed Gems are Supported by Level 20 Endurance Charge on Melee Stun
-Socketed Gems are Supported by Level 20 Fortify
+Socketed Gems are Supported by Level .. Onslaught
+Socketed Gems are Supported by Level .. Endurance Charge on Melee Stun
+Socketed Gems are Supported by Level .. Fortify
 increased Attack Speed if you've Killed Recently
 to Critical Strike Multiplier if you haven't dealt a Critical Strike Recently
 chance to Blind Enemies on Hit with Attacks
@@ -63,3 +62,7 @@ Culling Strike
 increased Area of Effect
 Hits with this Weapon have Culling Strike against Bleeding Enemies
 Removes Bleeding when you use a Warcry
+Can have multiple Crafted Mods
+ilvl
+elder
+shaper
