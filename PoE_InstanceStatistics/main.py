@@ -19,6 +19,7 @@ def CreateEmptyDataStructure():
     saveFile = 'stats.json'
     saveDict = {}
     saveDict['lastOpened'] = [] #datetime.strptime('2000/01/01,00:00:00', '%Y/%m/%d,%H:%M:%S')
+    saveDict['logPath'] = ""
     saveDict['deaths'] = 0
     saveDict['sessionStats'] = {}
     saveDict['totalStats'] = {}
@@ -114,7 +115,7 @@ def countOpenings(log):
     s = '***** LOG FILE OPENING *****'
     occurences = []
     for i in range(len(log)):
-        if s in logData[i]:
+        if s in log[i]:
             occurences.append(i)
     return occurences
 
@@ -211,26 +212,98 @@ def saveSessionToTotal(dataStruct):
     print('ss')
 
 
-
-#Main program#
-if not CheckIfSaveExists():
-    if CreateEmptyDataStructure():
-        print('Savefile created')
-        dataStruct = OpenDataStructure()
+def updateDatastruct():    
+    dataStruct = OpenDataStructure()
+    logData = iterateLogfile(dataStruct['lastOpened'])
+    savedStatistics = 'stats.json'
+    defaultDateTime = []
+    lastLength = 0
+    columns = ['lineID', 'instance', 'time']
+    df = pd.DataFrame(columns=columns)
+    
+    t = dataStruct['lastOpened']
+    dataStruct['lastOpened'] = t
+    
+    print(countOpenings(logData))
+    #First time the logger is run. If PoE is running, find the latest ** log file opening ** and go from there.
+    if dataStruct['lastOpened'] == defaultDateTime:
+        print('First time exe is run.')
+        if CheckIfRunning():
+            print('PoE is running')
+            logData = iterateLogfile(dataStruct['lastOpened'])
+            dataStruct['lastOpened'] = logData[-1].split()[0:2]
+            df = clearDF()
+            df = df.append(pd.DataFrame(parseLogfile(logData)))
+            
+            lastLength = len(logData)
+        #If PoE is not running. Save the timestamp of last ** log file opening **.
+        else:
+            print('PoE is not running')
+            logData = iterateLogfile(dataStruct['lastOpened'])
+            dataStruct['lastOpened'] = logData[-1].split()[0:2]
+            df = clearDF()
+            SaveDataStructure(dataStruct)
+            lastLength = len(logData)
+    #If countOpenings = 1, means PoE is either running or has not been started since last check, should either expect a new log opened or parse new lines.
+    #If countOpenings is greater than 1, means PoE has been opened at least once since last check, parse new info and save it to our datastruct.
+    elif len(countOpenings(logData)) > 1:
+        print('lastOpened has been updated. Parse new data.')
+        if CheckIfRunning():
+            print('PoE is running')
+            occurences = countOpenings(logData)
+            dataStruct['lastOpened'] = logData[occurences[0]].split()[0:2]
+            df = clearDF()
+            df = df.append(pd.DataFrame(parseLogfile(logData[occurences[1]:occurences[-2]])))
+            saveToTotalstats(df,dataStruct)
+            df = clearDF()
+            df = df.append(pd.DataFrame(parseLogfile(logData[0:occurences[1]])))
+            saveToSession(df, dataStruct)
+            lastLength = len(logData)
+        else:
+            print('PoE is not running')
+            occurences = countOpenings(logData)
+            dataStruct['lastOpened'] = logData[occurences[0]].split()[0:2]
+            df = clearDF()
+            df = df.append(pd.DataFrame(parseLogfile(logData[0:occurences[-2]])))
+            saveToTotalstats(df, dataStruct)
+            lastLength = len(logData)
+    #If logdata length has increased, but no new log file opened has beeen found, meaning poe is runnning and there is new info to parse.
+    elif len(logData) > lastLength:
+        print('New lines to parse')
+        if CheckIfRunning():
+            print('PoE is running')
+            occurences = countOpenings(logData)
+            dataStruct['lastOpened'] = logData[occurences[0]].split()[0:2]
+            df = df.append(pd.DataFrame(parseLogfile(logData[0:(len(logData)-lastLength+1)])))
+            saveToSession(df, dataStruct)
+            lastLength = len(logData)
     else:
-        print('Something went wrong when creating a empty savefile')
-else:
-    dataStruct = OpenDataStructure()   
+        tm.sleep(10)
+        print('Sleep')
+    print(dataStruct)
+    
 
-savedStatistics = 'stats.json'
 
-defaultDateTime = []
-lastLength = 0
-columns = ['lineID', 'instance', 'time']
-df = pd.DataFrame(columns=columns)
 
-t = dataStruct['lastOpened']
-dataStruct['lastOpened'] = t
+##Main program#
+#if not CheckIfSaveExists():
+#    if CreateEmptyDataStructure():
+#        print('Savefile created')
+#        dataStruct = OpenDataStructure()
+#    else:
+#        print('Something went wrong when creating a empty savefile')
+#else:
+#    dataStruct = OpenDataStructure()   
+#
+#savedStatistics = 'stats.json'
+#
+#defaultDateTime = []
+#lastLength = 0
+#columns = ['lineID', 'instance', 'time']
+#df = pd.DataFrame(columns=columns)
+#
+#t = dataStruct['lastOpened']
+#dataStruct['lastOpened'] = t
 
 #while True:
 #    

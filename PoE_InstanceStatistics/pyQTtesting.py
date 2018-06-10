@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QToolTip, QMessageBox, QWidget, QAction, QTabWidget,QVBoxLayout, QBoxLayout, QFormLayout, QLabel, QScrollArea, QScrollBar, QInputDialog, QLineEdit, QFileDialog, QGridLayout
-from PyQt5.QtCore import QCoreApplication, QRect, pyqtSlot
+from PyQt5.QtCore import QCoreApplication, QRect, pyqtSlot, QTimer
 from PyQt5.QtGui import QIcon, QFont
 import main
 import operator
@@ -47,8 +47,7 @@ class Window(QMainWindow):
     def closeEvent(self, event):
         print("Close")
 
-class MyTableWidget(QWidget):        
- 
+class MyTableWidget(QWidget):   
     def __init__(self, parent):   
         super(QWidget, self).__init__(parent)
         self.layout = QVBoxLayout(self)
@@ -59,56 +58,61 @@ class MyTableWidget(QWidget):
  
         # Initialize tab screen
         self.tabs = QTabWidget()
-        self.tab1 = QWidget()
+        self.tab1 = QScrollArea()
         self.tab2 = QScrollArea()
         self.tab3 = QWidget()
 
         # Add tabs
-        self.tabs.addTab(self.tab1,"Statistics")
-        self.tabs.addTab(self.tab2,"Tab 2")
+        self.tabs.addTab(self.tab1,"Session Stats")
+        self.tabs.addTab(self.tab2,"Total Stats")
         self.tabs.addTab(self.tab3, "Settings")
- 
-        #Create Statistics tab with content
-        self.tab1.layout = QGridLayout(self)
-        if not main.CheckIfSaveExists():
-            if main.CreateEmptyDataStructure():
-                print('Savefile created')
-                self.dataStruct = main.OpenDataStructure()
-            else:
-                print('Something went wrong when creating a empty savefile')
-        else:
-            self.dataStruct = main.OpenDataStructure()  
-        sorted_totalStats = sorted(self.dataStruct['totalStats'].items(),key=lambda x:operator.getitem(x[1],'count'), reverse=True)
         
-#        for inst in sorted_totalStats:
-#            print(inst)
-#            print(inst[0])
-#            print(inst[1]['count'])
+        self.dataStruct = getDatastruct()
+        
+        
+#        if not main.CheckIfSaveExists():
+#            if main.CreateEmptyDataStructure():
+#                print('Savefile created')
+#                self.dataStruct = main.OpenDataStructure()
+#            else:
+#                print('Something went wrong when creating a empty savefile')
+#        else:
+#            self.dataStruct = main.OpenDataStructure()  
             
+            
+        #Set up update timer
+        self.update_timer = QTimer(self)
+        self.update_timer.timeout.connect(self.updateTabs)
+        self.update_timer.start(5000)
+            
+        sessionLength = self.dataStruct['sessionStats']['sessionLength']
+        self.dataStruct['sessionStats'].pop('sessionLength', None)
+        sorted_totalStats = sorted(self.dataStruct['totalStats'].items(),key=lambda x:operator.getitem(x[1],'count'), reverse=True)
+        sorted_sessionStats = sorted(self.dataStruct['sessionStats'].items(),key=lambda x:operator.getitem(x[1],'count'), reverse=True)
+        print(self.dataStruct)
+ 
+        #Create Session stats tab with content
+        self.content_widget = QWidget()
+        self.tab1.setWidget(self.content_widget)
+        self.tab2Layer = QGridLayout(self.content_widget)
+        self.tab1.setWidgetResizable(True)
+        self.leftColumn = QLabel('Instance Name:', self)
+        self.leftColumn.setFont(boldFont)
+        self.middleColumn = QLabel('Instance Count:', self)
+        self.middleColumn.setFont(boldFont)
+        self.rightColumn = QLabel('Avg Time in Instance(secs):', self)
+        self.rightColumn.setFont(boldFont)
+        self.tab2Layer.addWidget(self.leftColumn, 0, 0)
+        self.tab2Layer.addWidget(self.middleColumn, 0, 1)
+        self.tab2Layer.addWidget(self.rightColumn, 0, 2)
+        self.AddSessionDataForTab1(sorted_sessionStats)
         
         
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        # Create first tab
-#        self.tab1.layout = QFormLayout(self)
-#        self.pushButton1 = QPushButton("PyQt5 button")
-#        self.pushButton2 = QPushButton("PyQt5 button")
-#        self.label1 = QLabel('Test', self)
-#        #self.tab1.layout.addWidget(self.pushButton1)
-#        #self.tab1.layout.addWidget(self.pushButton2)
-#        self.tab1.layout.addRow(self.label1, self.pushButton1)
-#        #self.tab1.layout.addRow(self.pushButton1, self.pushButton2)
-#        self.tab1.setLayout(self.tab1.layout)
-#        self.tab1.move(100, 100)
+        
+        
+        
+        
         
         # Create second tab
         self.content_widget = QWidget()
@@ -125,35 +129,9 @@ class MyTableWidget(QWidget):
         self.flay.addWidget(self.leftColumn, 0, 0)
         self.flay.addWidget(self.middleColumn, 0, 1)
         self.flay.addWidget(self.rightColumn, 0, 2)
-        
-        
-        cnt = 1
-        for inst in sorted_totalStats:
-            print(inst)
-            self.labelLeft = QLabel(str(inst[0]), self)
-            self.labelMiddle = QLabel(str(inst[1]['count']), self)
-            self.labelRight = QLabel(str(inst[1]['avgTime']), self)
+        self.AddTotalDataForTab2(sorted_totalStats)
+
             
-            self.flay.addWidget(self.labelLeft, cnt,0)
-            self.flay.addWidget(self.labelMiddle, cnt,1)
-            self.flay.addWidget(self.labelRight, cnt,2)
-            cnt += 1
-            
-            
-        
-#        self.t1 = QLabel('Test1', self)
-#        self.t2 = QLabel('Test2', self)
-#        self.t3 = QLabel('Test3', self)
-#        self.t4 = QLabel('Test4', self)
-#        self.t5 = QLabel('Test5', self)
-#        self.t6 = QLabel('Test6', self)
-#        self.flay.addRow(self.t1)
-#        self.flay.addRow(self.t2)
-#        self.flay.addRow(self.t3)
-#        self.flay.addRow(self.t4)
-#        self.flay.addRow(self.t5)
-#        self.flay.addRow(self.t6)
-        #self.tab2.setLayout(self.tab2.layout)
         
         
         #Create third tab
@@ -169,6 +147,8 @@ class MyTableWidget(QWidget):
         self.tab3.layout.addWidget(self.browseButton, 0, 2)
         self.tab3.setLayout(self.tab3.layout)
         
+        print(self.textbox.text())
+        
         
         
         # Add tabs to widget        
@@ -177,7 +157,39 @@ class MyTableWidget(QWidget):
         self.tabs.resize(300,100)
         #self.tabs.setMaximumWidth(300)
         #self.tabs.setMaximumHeight(100)
-
+        
+    def AddSessionDataForTab1(self, ds):
+        cnt = 1
+        for inst in ds:
+            print(inst)
+            self.labelLeft = QLabel(str(inst[0]), self)
+            self.labelMiddle = QLabel(str(inst[1]['count']), self)
+            self.labelRight = QLabel(str(inst[1]['avgTime']), self)
+            
+            self.tab2Layer.addWidget(self.labelLeft, cnt,0)
+            self.tab2Layer.addWidget(self.labelMiddle, cnt,1)
+            self.tab2Layer.addWidget(self.labelRight, cnt,2)
+            cnt += 1  
+    
+    
+    def AddTotalDataForTab2(self, ds):
+        cnt = 1
+        for inst in ds:
+            print(inst)
+            self.labelLeft = QLabel(str(inst[0]), self)
+            self.labelMiddle = QLabel(str(inst[1]['count']), self)
+            self.labelRight = QLabel(str(inst[1]['avgTime']), self)
+            
+            self.flay.addWidget(self.labelLeft, cnt,0)
+            self.flay.addWidget(self.labelMiddle, cnt,1)
+            self.flay.addWidget(self.labelRight, cnt,2)
+            cnt += 1 
+            
+    def updateTabs(self):
+        print("Update")
+        main.updateDatastruct()
+        self.dataStruct = getDatastruct()
+        
 
     @pyqtSlot()
     def on_click(self):
@@ -211,7 +223,16 @@ class Filedialog(QWidget):
             print(fileName)
             self.path = fileName
 
-
+def getDatastruct():
+    if not main.CheckIfSaveExists():
+        if main.CreateEmptyDataStructure():
+            print('Savefile created')
+            dataStruct = main.OpenDataStructure()
+        else:
+            print('Something went wrong when creating a empty savefile')
+    else:
+        dataStruct = main.OpenDataStructure() 
+    return dataStruct
 
         
 
