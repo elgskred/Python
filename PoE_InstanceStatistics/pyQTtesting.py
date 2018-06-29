@@ -90,6 +90,7 @@ class MyTableWidget(QWidget):
         sorted_totalStats = sorted(self.dataStruct['totalStats'].items(),key=lambda x:operator.getitem(x[1],'count'), reverse=True)
         sorted_sessionStats = sorted(self.dataStruct['sessionStats'].items(),key=lambda x:operator.getitem(x[1],'count'), reverse=True)
         print(self.dataStruct)
+        self.lastLength = 0
  
         #Create Session stats tab with content
         self.content_widget = QWidget()
@@ -186,9 +187,10 @@ class MyTableWidget(QWidget):
             cnt += 1 
             
     def updateTabs(self):
-        print("Update")
-        main.updateDatastruct()
+        print(self.dataStruct['lastOpened'])
+        self.lastLength = main.updateDatastruct(self.lastLength)
         self.dataStruct = getDatastruct()
+
         
 
     @pyqtSlot()

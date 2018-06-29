@@ -212,12 +212,11 @@ def saveSessionToTotal(dataStruct):
     print('ss')
 
 
-def updateDatastruct():    
+def updateDatastruct(lastLength):    
     dataStruct = OpenDataStructure()
     logData = iterateLogfile(dataStruct['lastOpened'])
     savedStatistics = 'stats.json'
     defaultDateTime = []
-    lastLength = 0
     columns = ['lineID', 'instance', 'time']
     df = pd.DataFrame(columns=columns)
     
@@ -268,7 +267,9 @@ def updateDatastruct():
             saveToTotalstats(df, dataStruct)
             lastLength = len(logData)
     #If logdata length has increased, but no new log file opened has beeen found, meaning poe is runnning and there is new info to parse.
+    #print("LogData: " + str(len(logData)) + " - Lastlength: " + str(lastLength))
     elif len(logData) > lastLength:
+        print("LogData: " + str(len(logData)) + " - Lastlength: " + str(lastLength))
         print('New lines to parse')
         if CheckIfRunning():
             print('PoE is running')
@@ -277,10 +278,11 @@ def updateDatastruct():
             df = df.append(pd.DataFrame(parseLogfile(logData[0:(len(logData)-lastLength+1)])))
             saveToSession(df, dataStruct)
             lastLength = len(logData)
-    else:
-        tm.sleep(10)
-        print('Sleep')
-    print(dataStruct)
+        else:
+            print('PoE is not running')
+            lastLength = len(logData)
+    #print(dataStruct)
+    return lastLength
     
 
 
